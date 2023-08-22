@@ -8,7 +8,7 @@ import { AccountsService } from '../accounts.service';
   styleUrls: ['./account.component.css'],
   providers: [
     LoggingService,
-    //AccountsService
+    // AccountsService
   ],
 })
 export class AccountComponent {
@@ -34,6 +34,7 @@ export class AccountComponent {
     // DONT DO LIKE THIS
     /* const service = new LoggingService();
     service.logStatusChange(accountStatus);*/
+
     this.loggingService.logStatusChange(status);
   }
 }

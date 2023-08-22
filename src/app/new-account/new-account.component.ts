@@ -25,6 +25,7 @@ import { AccountsService } from '../accounts.service';
 export class NewAccountComponent {
   //@Output() accountAdded = new EventEmitter<{ name: string; status: string }>();
 
+  //FOR CLEARING THE INPUT LATER
   @ViewChild('accountName') accountname!: ElementRef;
 
   //binding to property of the logging service class type instance ig
@@ -40,15 +41,21 @@ export class NewAccountComponent {
     });*/
     this.accountsService.addAccount(accountName, accountStatus);
 
+    //NORMAL CONSOLE LOG
     //console.log('A server status changed, new status: ' + accountStatus);
 
-    // DONT DO LIKE THIS
+    // DONT DO LIKE THIS WITH SERVICES BY CREATING AN INSTANCE LIKE THIS
     /* const service = new LoggingService();
     service.logStatusChange(accountStatus);*/
-    this.loggingService.logStatusChange(accountName);
-    //clear the input
+
+    //INSTEAD USE DEPENDENCY INJECTION
+    this.loggingService.logStatusChange(accountStatus);
+
+    //to clear the input on form submit
     this.accountname.nativeElement.value = '';
   }
+
+  //called when user submit form without entering name
   enterName() {
     alert('Please provide a name!');
   }
