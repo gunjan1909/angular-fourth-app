@@ -18,7 +18,7 @@ import { AccountsService } from '../accounts.service';
   and inject it into this component. so we can use it in this component.
   */
   providers: [
-    LoggingService,
+    // LoggingService,
     //AccountsService
   ],
 })
@@ -49,7 +49,8 @@ export class NewAccountComponent {
     service.logStatusChange(accountStatus);*/
 
     //INSTEAD USE DEPENDENCY INJECTION
-    this.loggingService.logStatusChange(accountStatus);
+
+    // this.loggingService.logStatusChange(accountStatus);
 
     //to clear the input on form submit
     this.accountname.nativeElement.value = '';

@@ -7,7 +7,7 @@ import { AccountsService } from '../accounts.service';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
   providers: [
-    LoggingService,
+    //LoggingService,
     // AccountsService
   ],
 })
@@ -35,6 +35,6 @@ export class AccountComponent {
     /* const service = new LoggingService();
     service.logStatusChange(accountStatus);*/
 
-    this.loggingService.logStatusChange(status);
+    //this.loggingService.logStatusChange(status);
   }
 }
